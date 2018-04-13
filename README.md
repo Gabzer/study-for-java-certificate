@@ -46,4 +46,24 @@ Para passar parâmetros para a sua classe é só utilizar o args[?] no seu códi
 
 3.Erros em Tempo de Execução
 
-próximo aula8
+**Herança**
+
+Uma classe herda atributos de outra
+
+**Polimorfismo**
+
+Relacionado aos métodos
+
+**Pacotes**
+
+Forma de organizar as classes. Convenção: domínioEmpresa + projeto + pasta
+
+**Variáveis**
+
+área de memória associada a um nome, que pode armazenar valores de um determinado tipo.
+
+Convenção de nomenclatura (camel case): 1ª letra = a-z A-Z _ &; 2ª a-z A-Z _ & 0-9;
+
+_Tipos Primitivos_
+
+int, float, double, char
