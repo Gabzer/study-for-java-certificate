@@ -66,4 +66,79 @@ Convenção de nomenclatura (camel case): 1ª letra = a-z A-Z _ &; 2ª a-z A-Z _
 
 _Tipos Primitivos_
 
-int, float, double, char
+Tipos Inteiros:
+
+*byte = 8 bits
+*short = 16 bits
+*int = 32 bits
+*long = 64 bits
+
+Tipos de Ponto Flutuante:
+
+*float = 32 bits (ex.: 100.30f)
+*double = 64 bits
+
+Tipo Caractere:
+
+*char - pode ser um inteiro (tabela ASCII)
+
+Tipo booleano:
+
+*boolean (true ou false)
+
+
+**Curiosidade**
+
+os valores limite de variáveis int são:
+
+-2147483648 à 2147483647
+
+mas é tipo uma roleta: quando você está em um dos limites e soma algum valor, ele passa automaticamente para o outro limite e não dá erro!!!
+
+_Tipos Literais_
+
+o double aceita notação científica:
+
+```java
+double d1 = 123.4;
+
+double d2 = 1.234e2;
+
+// d1 = d2
+```
+
+-Hexadecimais, Octais, Binários:
+
+```java
+int decVal = 26;
+int hexVal = 0x1a; //0x indica que é hexadecimal
+int octVal = 032; //0 indica que é octal
+int binVal = 0b11010; //0b indica que é binário
+//decVal = hexVal = octVal = binVal
+```
+
+-Pode e não pode:
+
+Pode:
+
+```java
+long creditCardNumber = 1234_5678_9012_3456L;
+float pi = 3.14_15F;
+long hexBytes = 0xFF_EC_DE_5E;
+byte nybbles = 0b0010_0101;
+```
+
+Não pode:
+
+```java
+float pi1 = 3_.1415F;
+int x1 = _52;
+int x5 = 0_x52;
+```
+
+Escape char:
+
+```java
+System.out.println("\"Hello, World!\"\n\r");
+System.out.println("1\\4");
+```
