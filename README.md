@@ -142,3 +142,154 @@ Escape char:
 System.out.println("\"Hello, World!\"\n\r");
 System.out.println("1\\4");
 ```
+
+**Lendo entradas**
+
+Primeiro temos que importar a biblioteca:
+
+```java
+import java.util.Scanner;
+```
+
+Depois, por esse método se lê o que for posto e transforma em string:
+
+```java
+Scanner scan = new Scanner(System.in);
+```
+
+Lendo a próxima linha:
+
+```java
+String nome = scan.nextLine();
+```
+
+Lê e transforma em int:
+
+```java
+int idade = scan.nextInt();
+```
+
+Lê e transforma em double:
+
+```java
+double altura = scan.nextDouble();
+```
+
+etc....
+
+**Operadores Aritméticos**
+
+```java
++ - * / % ++ --
+```
+
+**Operadores relacionais**
+
+```java
+== != > < >= <=
+```
+
+**Operadores Lógicos**
+
+```java
+& | ^ (=XOR) || && !
+```
+
+O '^' só vai dar falso quando os dois forem iguais.
+
+**Tipos de loop for**
+
+Normal:
+
+```java
+for (int i = 0; i < 5; i++){
+      ...
+}
+```
+
+Com mais de uma variável:
+
+```java
+for (int i = 0, j = 10; i < j; i++, j--){
+      ...
+}
+```
+
+Partes ausentes:
+
+```java
+int i = 0;
+for (; i < 5; ){
+      ...
+}
+```
+
+Loop infinito:
+
+```java
+for (; ; );
+```
+
+Loop melhorado, muito utilizado com Arrays:
+
+```java
+```
+
+**Comando break**
+
+Usado para saída de loops.
+
+Pode ser usado juntamente com um rótulo (label).
+
+```java
+int max = scan.nextInt();
+for (int i = 0; i <= max; i++) {
+      if (i % 7 == 0) {
+            System.out.println("O valor de i é: " + i);
+            break;
+      }
+}
+```
+
+break com rótulos - goto
+
+```java
+for (int i = 0; i <= 4; i++) {
+      rotulo1: {
+            rotulo2: {
+                  rotulo3: {
+                        if (i == 1) {
+                              break rotulo1;
+                        }
+                        if (i == 2) {
+                              break rotulo2;
+                        }
+                        if (i == 3) {
+                              break rotulo3;
+                        }
+                        System.out.println("rotulo3");
+                  }
+                  System.out.println("rotulo2");
+            }
+            System.out.println("rotulo1");
+      }
+      System.out.println("i");
+}
+```
+
+**Comando continue**
+
+Complemento do break.
+
+Continue o loop na próxima iteração.
+
+**Arrays**
+
+Estrutura de dados mais simples existente na maioria das linguagens de programação.
+
+Lista ordenada de dados.
+
+```java
+double[] temp = new double[30]; //qtde de linhas
+temp[0] = 31.2;
+```
