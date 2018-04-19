@@ -293,3 +293,62 @@ Lista ordenada de dados.
 double[] temp = new double[30]; //qtde de linhas
 temp[0] = 31.2;
 ```
+
+**Matriz**
+
+Array de arrays.
+
+```java
+double[][] nomeMatriz = new double[n][m];
+double[][] nomeMatriz = {{...}, {...}};
+```
+
+Matriz multidimensional.
+
+Matriz irregular.
+
+**For each**
+
+Normalmente para outputs
+
+```java
+int[] numeros = {...};
+for (int num : numeros){
+      ...
+}
+```
+
+Para matriz
+
+```java
+int[][] numeros = {...};
+for (int[] num : numeros){
+      for (int num : numeros){
+            ...
+      }
+}
+```
+
+**Orientação a Objetos**
+
+_Classe_
+
+```java
+class Carro {
+      String marca;
+      ...
+}
+
+Carro van = new Carro();
+van.marca = "jac";
+```
+
+_Métodos_
+
+o nome normalmente começa com um verbo.
+
+```java
+void exibirAutonomia() {
+      ....
+}
+```
