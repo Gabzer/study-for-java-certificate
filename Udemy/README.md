@@ -1,6 +1,16 @@
 Curso Java na Udemy
 ===================
 
+**Configuração**
+
+-JDK 8
+
+-Eclipse
+
+
+Questões para estudo
+====================
+
 Uma classe pode ter mais de um _implements_ ?
 
 http://www.guj.com.br/t/uma-pode-classe-implementar-mais-de-uma-interaface/81486
