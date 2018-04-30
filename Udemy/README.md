@@ -196,6 +196,18 @@ int i = iob;
 
 -o filho não pode receber o pai.
 
+**Classes Abstratas**
+
+Ao se criar uma classe para ser estendida, é muito comum não se ter a ideia de como codificar os seus métodos, isto é, somente as suas subclasses saberão implementá-los.
+
+Uma classe deste tipo não pode ser instanciada pois sua funcionalidade está incompleta.
+
+= abstrata (abstract)
+
+**Interfaces**
+
+No Java existe o conceito de interface que define uma série de métodos, sem conter as suas implementações. A interface só expõe o que o objeto deve fazer, e não como ele faz, nem o que ele tem. Como ele faz vai ser definido em uma implemetação dessa interface.
+
 
 
 

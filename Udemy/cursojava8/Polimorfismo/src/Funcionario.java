@@ -1,9 +1,8 @@
 
-public class Funcionario {
+public abstract class Funcionario {
 	
 	public static void main(String[] args) {
 		
-		Funcionario jose = new Funcionario();
 		Funcionario antonio = new Professor();
 		Funcionario andrea = new Administrativo();
 		Funcionario pedro = new Diretor();
@@ -16,6 +15,8 @@ public class Funcionario {
 		((Diretor)objeto).departamento = "RH";//casting
 		
 	}
+	
+	public abstract void getBonificacao();
 	
 	void verificarTipoFuncionario(Funcionario objeto) {
 		if (objeto instanceof Diretor) {
