@@ -279,6 +279,88 @@ public void m() throws Excecao1, Excecao2 {...}
 
 -throw = é utilizado para 'lançar' uma exceção especifica ou a sua própria exceção no meio do código.
 
+**JavaDoc**
+
+Para o correto uso da ferramenta, torna-se necessário a inclusão de comentários na linha anterior à definição de classe, interface, construtor, método e atributo.
+
+Sintaxe padrão:
+
+```java
+/**
+*Classe
+*@author Gabzer
+*/
+
+/**
+*Método
+*@param valor
+*/
+```
+
+No Eclipse, clique direito sobre o projeto, 'Export' e 'Javadoc', informar onde se encontra o seu javadoc no jdk.
+
+**Socket**
+
+Classe que implementa clientes sockets. Um socket é um endpoint para a comunicação entre duas máquinas.
+
+O trabalho atual do socket é desempenhado por uma instancia da classe SocketImpl. Uma aplicação, mudando o socket factory que cria a implementação do socket, pode se configurar para criar sockets apropriados para o firewall local.
+
+**ServerSocket**
+
+Classe que implementa o serviço sockets. Um serviço (server) socket espera por requests para entrar pela rede. Ele realiza alguma operação com base nessa solicitação (request) e, possivelmente, retorna um resultado para o solicitante (requester).
+
+O trabalho atual do socket é desempenhado por uma instancia da classe SocketImpl. Uma aplicação, mudando o socket factory que cria a implementação do socket, pode se configurar para criar sockets apropriados para o firewall local.
+
+**Thread**
+
+Pense numa Thread como uma sequência de comandos sendo executados em um programa. Se você tiver duas threads, terpa duas sequências de comandos executando ao mesmo tempo no mesmo programa ou processo.
+
+Existem dois meios para se criar Threads:
+
+```java
+/* -----------------------------------*/
+class PrimeThread extends Thread {
+    long minPrime;
+    PrimeThread(long minPrime) {
+        this. minPrime = minPrime;
+    }
+
+    public void run() {
+        //calcule primos maiores que minPrime
+        //....
+    }
+}
+/* -----------------------------------*/
+
+//...
+
+PrimeThread p = new PrimeThread(143);
+p.start();
+```
+
+ou:
+
+```java
+/* -----------------------------------*/
+class PrimeRun implements Runnable {
+    long minPrime;
+    PrimeRun(long minPrime) {
+        this. minPrime = minPrime;
+    }
+
+    public void run() {
+        //calcule primos maiores que minPrime
+        //....
+    }
+}
+/* -----------------------------------*/
+
+//...
+
+PrimeRun p = new PrimeRun(143);
+new Thread(p).start();
+```
+
 
 
 
