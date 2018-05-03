@@ -208,6 +208,89 @@ Uma classe deste tipo não pode ser instanciada pois sua funcionalidade está in
 
 No Java existe o conceito de interface que define uma série de métodos, sem conter as suas implementações. A interface só expõe o que o objeto deve fazer, e não como ele faz, nem o que ele tem. Como ele faz vai ser definido em uma implemetação dessa interface.
 
+--------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------
+
+**Pacotes Java**
+
+É um conjunto de classes e interfaces relacionadas e outros pacotes que provê _acesso protegido_ e _gerenciamento de espaço de nomes (namespaces)_.
+
+- _Stativ Import_: estende as funcionalidades do comando import, possibilitando que membros de classe sejam chamados.
+
+**Formato _J_ava _AR_chive**
+
+.JAR = possui um conjunto de classes e arquivos de configurações compactados, no estilo de um arquivo zip.
+
+-é necessária a config de um arquivo CLASSPATH = é uma var de ambiente que informa onde os arquivos .jar utilizados estão armazenados.
+
+-uma saída é colocar na pasta %JAVA_HOME%/jre/lub/ext os arquivos .jar.
+
+**Erros e Exceções**
+
+-2 tipos principais de erros:
+
+1.Erros de compilação=
+
+Problemas de sintaxe.
+
+2.Erros em Tempo de Execução=
+
+Problemas na lógica de programação e no ambiente de execução.
+
+-_Exception_: classe utilizada para Erro em Tempo de Execução.
+
+-Dois tipos de exceções:
+
+1._Unchecked Exceptions (UE) = grupo que não obrigam o programador a fazer o tratamento prévio delas com uso de _try/catch_ ou _throws_.
+
+2._Checked Exception (CE) = grupo que obrigam o programador a fazer o tratamento prévio delas com o uso de _try/catch_ oou _throws_.
+
+-classe _Error_ que define as condições consideradas muito graves, que tem pouca possibilidade de serem recuperadas.
+
+_Novidade do Java 7_: **Multicatch = evita repetição de código:
+
+```java
+try {
+    //...
+} catch (Exceção1 | Exceção2 | ... | ExceçãoN) {
+    //...
+} finally {
+    //...
+}
+```
+
+_Outra Novidade_: Gerenciamento Automático de recursos:
+
+```java
+try (MyBufferedReader br = new MyBufferedReader(new FileReader("classes.txt"))) {
+    String line;
+    while ((line = br.readLine()) != null)
+        instantiate(line);
+}
+```
+
+**Throws e Throw**
+
+throws = é obrigatório em métodos e construtores que deixam de capturar uma ou mais exceções (do tipo CE) que ocorrem em seu interior.
+
+```java
+public void m() throws Excecao1, Excecao2 {...}
+```
+
+-throw = é utilizado para 'lançar' uma exceção especifica ou a sua própria exceção no meio do código.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
