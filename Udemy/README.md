@@ -361,6 +361,13 @@ PrimeRun p = new PrimeRun(143);
 new Thread(p).start();
 ```
 
+**Applets Java**
+
+Uma aplicação gráfica Java que é executada em um _browser_.
+
+É também uma aplicação gráfica Java que não declara o método _public static void main(...)_.
+
+
 
 
 
