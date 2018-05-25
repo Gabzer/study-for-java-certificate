@@ -16,10 +16,12 @@ public class AloMundo extends JApplet {
 	}
 	
 	public void paint(Graphics g) {
-		g.drawRect(0, 0, 150, 150);
+		this.setBackground(Color.GREEN);
 		g.setColor(Color.CYAN);
-		g.setFont(new Font("Time New Roman", Font.BOLD, 16));
-		g.drawString("alo mundo", 20, 20);
+		this.setSize(400,100);
+		g.setFont(new Font("Time New Roman", Font.BOLD, 30));
+		g.drawString("Versão JVM:" + System.getProperty("java.version"), 20, 20);
+		g.drawString("Versão S.O.:" + System.getProperty("os.name"), 50, 50);
 	}
 	
 	@Override
