@@ -243,11 +243,11 @@ Problemas na lógica de programação e no ambiente de execução.
 
 1._Unchecked Exceptions (UE) = grupo que não obrigam o programador a fazer o tratamento prévio delas com uso de _try/catch_ ou _throws_.
 
-2._Checked Exception (CE) = grupo que obrigam o programador a fazer o tratamento prévio delas com o uso de _try/catch_ oou _throws_.
+2._Checked Exception (CE) = grupo que obrigam o programador a fazer o tratamento prévio delas com o uso de _try/catch_ ou _throws_.
 
 -classe _Error_ que define as condições consideradas muito graves, que tem pouca possibilidade de serem recuperadas.
 
-_Novidade do Java 7_: **Multicatch = evita repetição de código:
+_Novidade do Java 7_: **Multicatch** = evita repetição de código:
 
 ```java
 try {
@@ -313,7 +313,7 @@ O trabalho atual do socket é desempenhado por uma instancia da classe SocketImp
 
 **Thread**
 
-Pense numa Thread como uma sequência de comandos sendo executados em um programa. Se você tiver duas threads, terpa duas sequências de comandos executando ao mesmo tempo no mesmo programa ou processo.
+Pense numa Thread como uma sequência de comandos sendo executados em um programa. Se você tiver duas threads, terá duas sequências de comandos executando ao mesmo tempo no mesmo programa ou processo.
 
 Existem dois meios para se criar Threads:
 
@@ -365,7 +365,39 @@ new Thread(p).start();
 
 Uma aplicação gráfica Java que é executada em um _browser_.
 
-É também uma aplicação gráfica Java que não declara o método _public static void main(...)_.
+É também uma aplicação gráfica Java que não declara o método _public static void main(...)_. No seu caso, o método principal será o **public void paint(Graphics g)**.
+
+```java
+public class AloMundo extends JApplet {	
+	public void paint(Graphics g) { }
+}
+```
+
+Métodos herdados:
+
+1. _init()_ - inicializa os componentes do applet.
+
+2. _start()_ - o que fazer quando applet iniciar.
+
+3. _stop()_ - o que fazer antes do applet parar.
+
+4. _destroy()_ - o que fazer quando applet terminar.
+
+5. _paint()_ - o que desenhar no contexto gráfico.
+
+Um desses deve ser anulado para o applet funcionar.
+
+Passando parâmetros:
+
+```html
+<applet code="Sound.class" height=50 width=50>
+    <param name="sound.au">
+<applet>
+```
+
+```java
+String sound = getParameter("sound");
+```
 
 
 
