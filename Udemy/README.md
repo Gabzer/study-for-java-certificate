@@ -399,6 +399,86 @@ Passando parâmetros:
 String sound = getParameter("sound");
 ```
 
+Java Web Start (JAWS)
+=====================
+
+Alternativa ao applets. Criado no Java 2.
+
+O JAWS permite:
+
+1-Ativar aplicações facilmente, com apenas um clique;
+
+2-Oferecer a garantia de que sempre esteja sendo executada a versão mais recente da aplicação;
+
+3-Eliminar procedimentos complexos de instalação ou atualização.
+
+Pode ser executado via:
+
+1-Browser;
+
+2-Gerenciador de aplicações JAWS;
+
+3-Ícone na área de trabalho.
+
+Como criar uma app JAWS:
+
+1-Criar uma classe normalmente em java;
+
+2-Criar o arquivo de manifesto (manifest.mf) no subdiretório (Meta-inf);
+
+3-Compactar os dois arquivos anteriores em um JAR (jaws.jar);
+
+4-Criar uma chave-pública pelo Windows;
+
+5-Assinar o arquivo JAR com a chave-pública criada anteriormente;
+
+6-Criar o arquivo .jnlp que é o protocolo padrão (Java Network Launching Protocol) para executar aplicações JAWS.
+
+Necessário adicionar o caminho do arquivo jaws.jnlp na _Lista de Exceções_.
+
+
+Anotações
+=========
+
+É o recurso que possibilita escrever metadados (dados sobre outros dados) no código fonte de uma aplicação Java. essas anotações não afetam o funcionamento do código onde foram declaradas, pois são ignoradas pelo compilador.
+
+```java
+@anotação("parâmetro")
+```
+
+Minimiza a utilização de arquivos de configuração.
+
+Existem 3 **categorias** de anotações:
+
+1-marcadoras = são aquelas que não possuem membros.
+
+```java
+@Test
+```
+
+2-de valor único = são aquelas que possuem um único membro.
+
+```java
+@MinhaAnotacao("valor")
+```
+
+3-completas = são aquelas que possuem múltiplos membros
+
+```java
+@Version(major=1, minor=0)
+```
+
+Existem 2 **tipos** de anotações:
+
+1-simples: utilizadas para acrescentar siginificado ao código (@Override, @Suppresswarnings, @Deprecated, @SafeVarargs, @FunctionalInterface).
+
+2-meta-anotações: utilizadas para a criação de anotações (@Retention, @Documented, @Target, @Inherited, @Repeatable)
+
+@Deprecated = diz que um método não é mais utilizado.
+
+@Suppresswarnings = tira algumas mensagens de warning (@Suppresswarnings(value={"unchecked","rawtypes"})).
+
+@FunctionalInterface = informa que uma interface é explicitamente funcional, quer dizer que ela possui apenas um método abstrato. Interfaces funcionais são o coração do recurso de Lambda. O Lambda por si só não existe, e sim expressões lambda, quando atribuídas/inferidas a uma interface funcioanl.
 
 
 
