@@ -361,7 +361,8 @@ PrimeRun p = new PrimeRun(143);
 new Thread(p).start();
 ```
 
-**Applets Java**
+Applets Java
+=============
 
 Uma aplicação gráfica Java que é executada em um _browser_.
 
@@ -480,9 +481,28 @@ Existem 2 **tipos** de anotações:
 
 @FunctionalInterface = informa que uma interface é explicitamente funcional, quer dizer que ela possui apenas um método abstrato. Interfaces funcionais são o coração do recurso de Lambda. O Lambda por si só não existe, e sim expressões lambda, quando atribuídas/inferidas a uma interface funcioanl.
 
+@Retention = as anotações podem estar presentes apenas no código fonte ou no binário de classes ou interfaces. Essa anotação é usada para escolher entre essas possibilidades.
 
+```java
+@Retention(RetentionPolicy.SOURCE)
+@Retention(RetentionPolicy.CLASS)
+@Retention(RetentionPolicy.RUNTIME)
+```
 
+**Criar uma nova anotação**
 
+```java
+public @interface ITabela {
+    String[] colunas();
+}
+```
+
+Streams de Entrada e Saída
+==========================
+
+-stream = sequência de dados transmitidos de uma fonte de entrada para um destino de saída e vice-verça.
+
+-_InputStream_ e _OutputStream_ são as classes abstratas definidas no pacote java.io que representam um Stream de Entrada e um Stream de Saída, respectivamente. Principais Streams: Byte Stream, Character Stream, Buffered Stream (memória auxiliar), Data Stream (boolean, char, byte, short, int, long, float e double) e Object Stream (necessita de Serializable).
 
 
 
