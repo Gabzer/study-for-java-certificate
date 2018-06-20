@@ -504,6 +504,46 @@ Streams de Entrada e Saída
 
 -_InputStream_ e _OutputStream_ são as classes abstratas definidas no pacote java.io que representam um Stream de Entrada e um Stream de Saída, respectivamente. Principais Streams: Byte Stream, Character Stream, Buffered Stream (memória auxiliar), Data Stream (boolean, char, byte, short, int, long, float e double) e Object Stream (necessita de Serializable).
 
+Scanner e Formatter
+===================
+
+Scanner = implementa as operações de entrada de dados pelo teclado.
+
+Formatter = implementa as operações de saídad dos dados gerados pela aplicação.
+
+```java
+Fomatter fmt = new Formatter(System.out);
+Scanner scn = new Scanner(System.in);
+int n1 = scn.nextInt();
+fmt.format("n1: %d", n1);
+```
+
+|----|------------------|
+|    |caracteres de formatação|
+|----|------------------|
+| %c | caractere simples|
+| %d | decimal          |
+| %e |notação científica|
+| %f | ponto flutuante  |
+| %o | octal            |
+| %s |cadeia de caracteres|
+| %u | decimal sem sinal|
+| %x | hexadecimal      |
+|----|------------------|
+
+Se a string não puder ser interpretada com o tipo especificado, a exceção _inputMismatchException_ é anunciada.
+
+**Classes Path e Files**
+
+A classe _Path_ permite manipular o caminho em um determinado sistema de arquivos.
+
+```java
+//Sintaxe Microsoft Windows
+Path path = Path.get("C:\\home\\user\\foo");
+```
+
+A classe _Files_ é composta por vários métodos para manipulação de arquivos (criação, cópia e exclusão).
+
 
 
 
