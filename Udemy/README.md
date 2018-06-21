@@ -655,7 +655,15 @@ pode-se impor limites aos curingas:
 
 **Restrições no Uso de Genéricos**
 
+- _instanceof_ ou _cast_ não fazem sentido quando se usa Genéricos.
 
+- _vetores_ não podem ser utilizados com Genéricos. Melhor usar o <?>.
+
+- Genéricos não trabalham com tipos primitivos.
+
+- Não é possível a criação de objetos dos tipos parametrizados.
+
+- Não é possível usar _catch_ e _throw_ para objetos de tipos parametrizados.
 
 
 
