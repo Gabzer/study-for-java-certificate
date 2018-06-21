@@ -544,6 +544,121 @@ Path path = Path.get("C:\\home\\user\\foo");
 
 A classe _Files_ é composta por vários métodos para manipulação de arquivos (criação, cópia e exclusão).
 
+Genéricos
+=========
+
+São tipos parametrizados que possibilitam a criação de classes, interfaces e métodos que funcionam automaticamente com tipos diferentes de dados.
+
+Com genéricos todos os _casts_ são automáticos e implícitos, bem como a checagem de tipo é mais robusta em tempo de compilação.
+
+Código **sem** o uso de Genéricos:
+
+```java
+Lista myIntList = new LinkedList();
+myIntList.add(new Integer(0));
+Integer x = (Integer) myIntList.iterator().next();
+```
+
+Código **com** o uso de Genéricos
+
+```java
+Lista<Integer> myIntList = new LinkedList<Integer>();
+myIntList.add(new Integer(0));
+Integer x = myIntList.iterator().next();
+```
+
+**vantagem:** com o uso de Genéricos há maior 'estabilidade' no código escrito, fazendo com que mais erros sejam detectados em tempo de compilação, solução menos pior do que ser detectado em tempo de execução.
+
+No Java 7, no _new Class<>()_ não é necessário repetir o tipo Genérico.
+
+**Anatomia dos Genéricos**
+
+_RAW TYPE:_ sem argumento
+
+```java
+ExemploGenerics ex = new ExemploGenerics();
+```
+
+_BOUNDED TYPES:_ define a qual superclasse o tipo genérico estende.
+
+```java
+public class Stats<T extends Number> {
+    T[] num;
+    Stats(T[] num) {
+        this.num = num;
+    }
+
+    double media() {
+        double soma = 0;
+        int i;
+        for(i = 0; i < num.length; i++) {
+            soma = soma + num[i].doubleValue();
+        }
+        return (soma / i);
+    }
+}
+```
+
+**Métodos Genéricos**
+
+```java
+//definição
+<G extends Number>int intmedia (G num) {
+    return (num.intValue());
+}
+//chamada
+Classe.<Integer>intmedia(5);
+```
+
+**Construtores Genéricos**
+
+```java
+public class NotaAluno {
+    double valor;
+    <T extends Number> NotaAluno (T obj) {
+        valor = obj.doubleValue();
+    }
+}
+```
+
+**Interface Genérica**
+
+```java
+interface MinMax<T extends Comparable> {
+    T min();
+    T max();
+}
+```
+
+**Hierarquia de Classes**
+
+A única diferença é que na hierarquia de Genéricos qualquer tipo de argumento da superclasse deverá ser passado por todas as subclasses existentes.
+
+```java
+//superclasse genérica
+class Gen<T> {...}
+//subclasse genérica
+class Gen2<T> extends Gen<T> {...}
+```
+
+_curingas (Wildcards)_
+
+a superclasse de qualquer Genérico é representada por <?>
+
+_bounded wildcards_
+
+pode-se impor limites aos curingas:
+
+1. limites superiores <? extends T> = aceita T e todos os seus descendentes.
+
+2. limites inferiores <? super T> = aceita T e todos os seus ascendentes.
+
+**Restrições no Uso de Genéricos**
+
+
+
+
+
 
 
 
