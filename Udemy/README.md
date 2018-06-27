@@ -665,6 +665,21 @@ pode-se impor limites aos curingas:
 
 - Não é possível usar _catch_ e _throw_ para objetos de tipos parametrizados.
 
+Framework Collections
+=====================
+
+É uma arquitetura unificada para a representação e a manipulação de coleções. Uma coleção é uma estrutura de dados que possibilita agrupar outros objetos, tendo por objeto: adicionar, remover e pesquisar um determinado objeto dentro da coleção.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
