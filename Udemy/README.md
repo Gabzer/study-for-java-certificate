@@ -670,7 +670,29 @@ Framework Collections
 
 É uma arquitetura unificada para a representação e a manipulação de coleções. Uma coleção é uma estrutura de dados que possibilita agrupar outros objetos, tendo por objeto: adicionar, remover e pesquisar um determinado objeto dentro da coleção.
 
+**Lista, Pilha e Fila**
 
+Lista - é uma estrutura de dados que consiste em uma coleção de nós dispostos linearmente, onde cada elemento tem um antece.
+
+- principais implementações de lista:
+
+1. Pilha: adota a política _last-in-first-out_. Realiza as operações de Adição e Remoção no início da Lista.
+
+```java
+public class Stack<E> extends Vector<E>
+```
+
+2. Fila simplesmente encadeada: política _first-in-first-out_. Operações de Adição no fim da Lista e de remoção no início da Lista.
+
+```java
+public interface Queue<T>
+```
+
+3. Fila duplamente encadeada: política _first-in-first-out_. Operações de Adição no fim da Lista e de Remoção no início da Lista.
+
+```java
+public interface Deque<T>
+```
 
 
 
