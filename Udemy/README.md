@@ -694,6 +694,49 @@ public interface Queue<T>
 public interface Deque<T>
 ```
 
+**Interface Set**
+
+É a interface que define uma coleção que não contém objetos duplicados. Também é conhecido como _Conjunto_. Não é garantida a ordenação dos objetos.
+
+- 3 implementações da Interface Set:
+
+1. HashSet: utiliza uma tabela _hash_ para guardar os seus elementos, sem garantir a ordem de iteração, nem que a mesma permanecerá constante com o tempo. Por utilizar o algoritmo de tabela hash, o acesso é rápido, tanto para leitura quanto para modificação.
+
+2. LinkedHashSet: subclasse de HashSet que adiciona previsibilidade à ordem de iteração sobre os elementos, isto é, garante a ordem com que os elementos presentes no conjunto são recuperados.
+
+3. TreeSet: oferece um conjunto ordenado de elementos por intermédio de árvore balanceada _red-black_.
+
+```java
+Collection semDeuplicacao = new HashSet(comDuplicacao);
+
+Collection semDeuplicacao = new LinkedHashSet(comDuplicacao);
+
+Collection semDeuplicacao = new TreeSet(comDuplicacao);
+```
+
+**Interface List**
+
+Ela define uma coleção de elementos ordenados (que podem estar duplicados) e cujo acesso é reaçizado por meio de um índice numérico que representa a posição de cada elemento.
+
+- 2 implementações do List:
+
+1. ArrayList: utiliza internamente um vetor de objetos, cujo tamanho inicial é de 10 posições. É preferível esta implementação quando o tamanho da lista é previsívele as operações de inserção e remoção são feitas, em sua maioria, no fim da lista (evitando deslocamento), ou quando a lista é mais lida do que modificada (otimizado para leitura aleatória).
+
+2. LinkedList: utiliza internamente uma lista duplamente encadeada e a busca pelos seus elementos é feita de forma sequencial (via padrão Iterator) ou nas extremidades, e não de forma aleatória (por índices).
+
+
+**Interfaces Queue e Dequeue**
+
+_Queue_: a interface que define uma coleção de elementos cujo acesso se dá por meio de uma Lista Simplesmente Encadeada.
+
+- principais métodos: add(e), remove(), element(), offer(e), poll(), peek().
+
+_Dequeue_: a interface que define uma coleção de elementos cujo acesso se dá por meio de uma Lista Duplamente Encadeada.
+
+
+**Interface Map**
+
+É a interface base para todos os tipos de coleções baseados em Mapa. Um Mapa (também chamados de vetores associativos) é utilizado para organizar coleções de objetos, cujos índices de acesso não precisam necessariamente ser valores inteiros positivos sequenciais. (Tipo o dicionário em Python [chave, valor]).
 
 
 
