@@ -5,7 +5,28 @@ import java.util.Set;
 
 public class Cliente {
 	
-	Set<Curso> cursos;
+	String cpf;
+	String nome;
+	String email;
+	
+	public Cliente(String cpf, String nome, String email) {
+		super();
+		this.cpf = cpf;
+		this.nome = nome;
+		this.email = email;
+	}
+
+	@Override
+	public String toString() {
+		return "Cliente [nome=" + nome + "]";
+	}
+	
+	
+	
+	
+	
+	
+	/*Set<Curso> cursos;
 	
 	public static void main(String[] args) {
 		
@@ -43,7 +64,7 @@ public class Cliente {
 
 	public void setCursos(Set<Curso> cursos) {
 		this.cursos = cursos;
-	}
+	}*/
 	
 	
 }
