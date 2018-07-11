@@ -738,6 +738,44 @@ _Dequeue_: a interface que define uma coleção de elementos cujo acesso se dá 
 
 É a interface base para todos os tipos de coleções baseados em Mapa. Um Mapa (também chamados de vetores associativos) é utilizado para organizar coleções de objetos, cujos índices de acesso não precisam necessariamente ser valores inteiros positivos sequenciais. (Tipo o dicionário em Python [chave, valor]).
 
+**Interfaces Auxiliares e Classes Utilitárias**
+
+_Interfaces Auxiliares:_ o framework Collections também define uma série de interfaces auxiliares que definem operações sobre os objetos retornados de uma coleção: Iterator, ListIterator, Comparable, Comparator, Enumeration e RandomAccess.
+
+_Classes Utilitárias:_ são aquelas que possuem apenas métodos estáticos e são utilizadas pelas classes definidas no framework Collections (ex.:Collections, Arrays, Properties).
+
+OBS.: Programe voltado à interface e não à implementação:
+
+```java
+//não fazer assim
+ArrayList lista = new ArrayList();
+//o correto é
+List lista = new ArrayList();
+```
+
+Novidades Java 8
+================
+
+**Expressões Lambdas**
+
+Antes tinha que ser um método dentro de um objeto, agora uma classe pode ser uma função (paradigma funcional).
+
+_Expressões Lambda_ são um novo recurso da linguagem Java para implementar de maneira simples o cálculo lambda. Lambda repressenta uma função anônima.
+
+_Classes anônimas_ são aquelas que não possuem nome, não tem construtor e só são utilizadas dentro de um bloco de código para oferecer alguma funcionalidade.
+
+A lambda evita a utilização de classes anônimas:
+
+```java
+//anônima
+btnNewButton.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent event) {
+        ...
+    }
+});
+//lambda
+btnNewButton.addActionListener(event -> {...});
+```
 
 
 
