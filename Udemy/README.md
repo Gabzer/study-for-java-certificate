@@ -813,6 +813,34 @@ public class Calculadorav2 {
 }
 ```
 
+**Interfaces Funcionais**
+
+São o 'coração' do recurso de lambda. O Lambda por si só não existe, mas sim as _expressões lambda_ quando associadas a uma interface funcional.
+
+```java
+@FunctionalInterface
+interface Name_Interface {
+    /*...*/
+}
+```
+
+**Principais utilizações da Expressão Lambda**
+
+1. Substituição das Classes Anônimas utilizadas com muita frequência para ativação de eventos em Interfaces Gráficas com Java.
+
+2. Realização de operações em objetos do Framework Collections de forma mais objetiva e concisa.
+
+**Referência de Métodos**
+
+É usada para fazer uso de uma função já existente. Utilizar com *class_object::name_function*
+
+**Métodos Default**
+
+No Java 8, as interfaces já podem possuir implementação de métodos. A esses métodos é dado o nome de default e são identificados pelo uso da palavra reservada _default_. Eles permitem evoluir uma API antiga de maneira não disruptiva, sem romper com o passado.
+
+**Streams**
+
+
 
 
 
