@@ -840,6 +840,15 @@ No Java 8, as interfaces já podem possuir implementação de métodos. A esses 
 
 **Streams**
 
+O Stream  traz para o Java uma forma mais funcional de se trabalhar com coleções, usando uma interface específica para isso. Um Stream representa uma abstração de um 'fluxo de dados'.
+
+A interface _Stream<T>_ representa uma sequencia de elementos nos quais uma ou mais operações (filter, sorted, map, match, count, reduce) poderão ser executadas. Essas oper poderão ser **intermediárias** ou **terminais**. A primeira retorna um Stream para ser utilizado em uma outra operação. A segunda já retorna o resultado esperado.
+
+**Parallel Streams**
+
+A principal diferença é que no primeiro utiliza-se apenas uma thread, enquanto que no segundo são utilizadas várias threads. Assim sendo, o segundo tipo de Stream é muito mais 'performático' que o primeiro.
+
+
 
 
 
