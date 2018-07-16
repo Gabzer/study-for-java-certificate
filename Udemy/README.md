@@ -848,7 +848,18 @@ A interface _Stream<T>_ representa uma sequencia de elementos nos quais uma ou m
 
 A principal diferença é que no primeiro utiliza-se apenas uma thread, enquanto que no segundo são utilizadas várias threads. Assim sendo, o segundo tipo de Stream é muito mais 'performático' que o primeiro.
 
+Aplicações Gráficas em Java
+===========================
 
+**SWING**
+
+Está organizado em:
+
+1. Container (JFrame, JDialog, JApplet) é o local onde são adicionados os componentes e outros containers
+
+2. Componentes (JButton, JLabel, JScrollBar, JOptionPane, etc) são os elementos gráficos adicionados a um Container.
+
+3. Gerenciadores de Layout (FlowLayout, BorderLayout, etc) são os elementos responsáveis pelo posicionamento dos componentes adicionados a um determinado Container.
 
 
 
