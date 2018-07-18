@@ -861,6 +861,56 @@ Está organizado em:
 
 3. Gerenciadores de Layout (FlowLayout, BorderLayout, etc) são os elementos responsáveis pelo posicionamento dos componentes adicionados a um determinado Container.
 
+**Look and Feel (L&F)**
+
+_Look_ se refere à aparência dos componentes gráficos e _Feel_ ao comportamento destes na ocorrência de eventos.
+
+```java
+UIManager.setLookAndFell("Windows");
+```
+
+**Java FX**
+
+É o próximo passo na evolução do Java como plataforma de desenvolvimento de aplicações cliente ricas. Pode ser usado para web e mobile. No eclipse isntalar o e(fx)clipse para ele funcionar.
+
+Como criar um projeto em JavaFX:
+
+1. No eclipse, File > New Project > Other > JavaFxProject > Next
+
+2. Na caixa de diálogo 'Application Type' > Manter 'Desktop' > Finish
+
+3. application.css
+
+```css
+.root {
+    -fx-background-image: url("background.png");
+}
+```
+
+4. Main.java
+
+```java
+public void start (Stage primaryStage) {
+    try {
+        StackPane root = new StackPane();
+        primaryStage.setTitle("Aplicação JavaFx");
+        Button btn = new Button();
+        btn.setText("Say Hello World!");
+        Label lb = new Label();
+        btn.setOnAction(ev -> lb.setText("\n\n\n Alo Pessoal"));
+        root.getChildren().add(btn);
+        root.getChildren().add(lb);
+        Scene scene = new Scene(root,400,400);
+        scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+```
+
+
 
 
 
