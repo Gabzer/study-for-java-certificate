@@ -944,6 +944,8 @@ O modelo de aplicação JEE divide as aplicações corporativas em 3 partes:
 
 
 
+
+
 --------------------------------------------------------------------------------------------------------------
 
 Questões para estudo
@@ -952,10 +954,6 @@ Questões para estudo
 **Uma classe pode ter mais de um _implements_ ?**
 
 http://www.guj.com.br/t/uma-pode-classe-implementar-mais-de-uma-interaface/81486
-
-**O que é _TreeSet_ ?**
-
-http://www.linhadecodigo.com.br/artigo/3669/trabalhando-com-a-interface-set-no-java.aspx
 
 **O que é _.getClass()_ ?**
 
