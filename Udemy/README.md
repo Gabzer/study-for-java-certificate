@@ -910,10 +910,24 @@ public void start (Stage primaryStage) {
 }
 ```
 
+Unidade 1: Arquitetura JEE
+==========================
 
+Java Enterprise Edition - Persistência de Dados com JDBC e Hibernate
 
+**Arquitetura JEE**
 
+O JEE acrescenta ao JSE vários recursos específicos (APIs) para a construção de serviços de software que rodam em servidores de aplicação disponíveis na 'Nuvem'.
 
+Modelo de Aplicação JEE: database(data storage), web server(business logic, data access) e browser(GUI).
+
+O modelo de aplicação JEE divide as aplicações corporativas em 3 partes:
+
+1. _Componente_ é uma unidade de software funcional independente que é montada em uma aplicação JEE com seus arquivos e classes relacionados e que se comunica com outros componentes.
+
+2. _Containers_ ficam localizados entre os componentes e os clientes, provendo serviços transparentes para ambos, incluindo serviços transacionais, pooling de recursos, gerenciamento de ciclo de vida, segurança e transação.
+
+3. _Conectores_ são utilizados para uniformizar os métodos de acesso/comunicação aos Sistemas de Informação Empresarial (EIS) em Java.
 
 
 
