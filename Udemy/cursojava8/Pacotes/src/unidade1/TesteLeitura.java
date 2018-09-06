@@ -6,7 +6,7 @@ public class TesteLeitura {
 		// TODO Auto-generated method stub
 		byte[] bytes = new byte[10];
 		System.out.println("Digite algo: ");
-		System.in.read(bytes);
+		//System.in.read(bytes);
 		/*try {
 			System.in.read(bytes);
 		} catch (IOException e) {
