@@ -1,15 +1,18 @@
-package unidade3;
+package unidade3.com.abctreinamentos;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Scanner;
 
-public class ClienteApp {
+public class ClienteDAO {
 	
 	static String url = "jdbc:oracle:thin:@localhost:1521:XE";
 	static String usuario = "curso_java";
@@ -18,15 +21,17 @@ public class ClienteApp {
 	
 	public static void conectar() throws SQLException {
 		conexao = DriverManager.getConnection(url,usuario,senha);
+		DatabaseMetaData meta = conexao.getMetaData();
 		conexao.setAutoCommit(false);
+		System.out.println(">>> Conectado ao Banco de Dados " + meta.getDatabaseProductVersion());
 	}
 	
 	public static void desconectar() throws SQLException {
 		conexao.close();
 	}
 	
-	public static void inserir (long cpf, String nome, String email) throws SQLException {
-		String sql = "INSERT INTO Cliente VALUES (" + cpf + ", '" + nome + "', '" + email +"')";
+	public static void inserir (Cliente cliente) throws SQLException {
+		String sql = "INSERT INTO Cliente VALUES (" + cliente.getCpf() + ", '" + cliente.getNome() + "', '" + cliente.getEmail() +"')";
 		Statement statement = conexao.createStatement();
 		statement.execute(sql);
 		conexao.commit();
@@ -52,32 +57,39 @@ public class ClienteApp {
 		conexao.commit();
 	}
 	
-	public static void consultar (long cpf) throws SQLException {
+	public static Cliente consultar (long cpf) throws SQLException {
 		String sql = "SELECT * FROM Cliente WHERE cpf=" + cpf + "";
 		Statement statement = conexao.createStatement();
 		ResultSet rs = statement.executeQuery(sql);
+		Cliente cliente = null;
 		while (rs.next()) {
-			System.out.println("cpf:" + rs.getInt(1) + 
-					" nome:" + rs.getString(2) + " email:" + rs.getString(3));
+			cliente = new Cliente(
+					rs.getLong(1),
+					rs.getString(2),
+					rs.getString(3)
+				);
 		}
+		return cliente;
 	}
 	
-	public static void consultarTodos () throws SQLException {
+	public static List<Cliente> consultarTodos () throws SQLException {
 		String sql = "SELECT * FROM Cliente";
 		Statement statement = conexao.createStatement();
 		ResultSet rs = statement.executeQuery(sql);
-		int cont = 0;
+		List<Cliente> clientes = new LinkedList<>();
 		while (rs.next()) {
-			System.out.println("cpf:" + rs.getInt(1) + 
-					" nome:" + rs.getString(2) + " email:" + rs.getString(3));
-			System.out.println("-----------------------------------------------------");
-			cont++;
+			Cliente cliente = new Cliente(
+					rs.getLong(1),
+					rs.getString(2),
+					rs.getString(3)
+				);
+			clientes.add(cliente);
 		}
-		System.out.println("Número de clientes listados: " + cont + "\n");
+		return clientes;
 	}
 	
-	public static void alterar (long cpf, String nome, String email) throws SQLException {
-		String sql = "UPDATE Cliente SET nome='" + nome + "', email='" + email +"' WHERE cpf=" + cpf;
+	public static void alterar (Cliente cliente) throws SQLException {
+		String sql = "UPDATE Cliente SET nome='" + cliente.getNome() + "', email='" + cliente.getEmail() +"' WHERE cpf=" + cliente.getCpf();
 		Statement statement = conexao.createStatement();
 		statement.executeUpdate(sql);
 		conexao.commit();
@@ -113,13 +125,16 @@ public class ClienteApp {
 				switch (opcao) {
 					case 1:
 						System.out.println("[1] Consultar Todos");
-						consultarTodos();
+						List<Cliente> clientes = ClienteDAO.consultarTodos();
+						clientes.forEach(System.out::println);
+						System.out.println("Número de Clientes: " + clientes.size() + "\n");
 						break;
 					case 2:
 						System.out.println("[2] Consultar um Cliente Especifico");
 						System.out.println("Favor informar o CPF >>>");
 						cpf = entrada.nextLong();
-						consultar(cpf);
+						Cliente cliente = ClienteDAO.consultar(cpf);
+						System.out.println(cliente);
 						break;
 					case 3:
 						System.out.println("[3] Cadastrar um Novo Cliente");
@@ -130,9 +145,8 @@ public class ClienteApp {
 						nome = entrada.nextLine();
 						System.out.println("Favor informar o Email >>>");
 						email = entrada.nextLine();
-						//inserir(cpf, nome, email);
-						//inserirPS(cpf, nome, email);
-						inserirSP(cpf, nome, email);
+						Cliente cliente2 = new Cliente(cpf, nome, email);
+						ClienteDAO.inserir(cliente2);
 						break;
 					case 4:
 						System.out.println("[4] Alterar um Cliente");
@@ -143,13 +157,14 @@ public class ClienteApp {
 						nome = entrada.nextLine();
 						System.out.println("Favor informar o Email >>>");
 						email = entrada.nextLine();
-						alterar(cpf, nome, email);
+						Cliente cliente3 = new Cliente(cpf, nome, email);
+						ClienteDAO.alterar(cliente3);
 						break;
 					case 5:
 						System.out.println("[5] Excluir um Cliente");
 						System.out.println("Favor informar o CPF >>>");
 						cpf = entrada.nextLong();
-						excluir(cpf);
+						ClienteDAO.excluir(cpf);
 						break;
 					case 6:
 						System.out.println("Encerrando o Sistema...");
@@ -164,5 +179,4 @@ public class ClienteApp {
 			e.printStackTrace();
 		}
 	}
-
 }
