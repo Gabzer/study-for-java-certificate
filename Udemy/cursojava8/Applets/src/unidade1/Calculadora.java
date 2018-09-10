@@ -17,7 +17,7 @@ public class Calculadora {
 			dividir(n1, n2);
 		} catch (ArithmeticException e) {
 			// TODO: handle exception
-			throw new DivisaoZeroException();
+			//throw new DivisaoZeroException();
 		}
 	}
 

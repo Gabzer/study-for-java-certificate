@@ -1,6 +1,6 @@
 package unidade1;
 
-import unidade1.br.abctreinamentos.Universidade;
+/*import unidade1.br.abctreinamentos.Universidade;
 import static unidade1.br.abctreinamentos.Universidade.*;
 
 public class Mec {
@@ -13,4 +13,4 @@ public class Mec {
 	public static void main(String[] args) {
 		gerarRelatorioProfessorMestresDoutores();
 	}
-}
+}*/
