@@ -1,7 +1,6 @@
 package unidade2;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -13,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ServletAutenticador
@@ -49,21 +49,26 @@ public class ServletAutenticador extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Entrou aqui");
 		String cpfmascara = request.getParameter("cpf");
 		cpfmascara = cpfmascara.replaceAll("[.-]", "");
 		long cpf = Long.parseLong(cpfmascara);
 		String senha = request.getParameter("senha");
 		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
+		//PrintWriter out = response.getWriter();
 		String consulta = "SELECT * FROM Login WHERE cpf='" + cpf + "' and senha='" + senha + "'";
 		Statement statement;
+		HttpSession session = request.getSession();
 		try {
 			statement = conexao.createStatement();
 			ResultSet rs = statement.executeQuery(consulta);
-			if (rs.next())
-				out.println("<h2>Usuário Autenticado!</h2>");
-			else
-				out.println("<h2>Usuário Não Autenticado!</h2>");
+			if (rs.next()) {
+				session.setAttribute("mensagem", "Usuário Autenticado!");
+				response.sendRedirect("unidade3/sucesso.jsp");
+			}else{
+				session.setAttribute("mensagem", "Usuário Não Autenticado!");
+				response.sendRedirect("unidade3/login.jsp");
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
