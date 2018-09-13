@@ -17,7 +17,6 @@
     }
 </jsp:declaration>
 <jsp:scriptlet>
-	System.out.println("Entrou aqui");
 	String cpfmascara = request.getParameter("cpf");
 	cpfmascara = cpfmascara.replaceAll("[.-]", "");
 	long cpf = Long.parseLong(cpfmascara);
