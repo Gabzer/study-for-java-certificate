@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp" />
 <html><head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +47,7 @@
             <div class="navbar navbar-fixed-bottom bgred">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12 text-center" style="top:13px;color:#fff;">Â© ABCTreinamentos - Curso de Java 8 para Web</div>
+                        <div class="col-sm-12 text-center" style="top:13px;color:#fff;">© ABCTreinamentos - Curso de Java 8 para Web</div>
                     </div>
                 </div>
             </div>

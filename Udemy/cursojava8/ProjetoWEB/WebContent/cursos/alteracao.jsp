@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp" />
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +21,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CURSOS - CADASTRAR UM NOVO CURSO &lt;&lt;</h3>
+            <h3 class="tt_menu">&gt;&gt; CURSOS - ALTERAR UM CURSO &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -59,8 +60,8 @@
                 </div>
               </div>
               <input type="hidden" name="idformulario" value="2" />
-              <input type="hidden" name="tipoformulario" value="23" />
-              <button type="submit" class="btn btn-danger">Cadastrar</button>
+              <input type="hidden" name="tipoformulario" value="24" />
+              <button type="submit" class="btn btn-danger">Alterar</button>
             </form>
           </div>
         </div>
@@ -79,7 +80,7 @@
       <div class="navbar navbar-fixed-bottom bgred">
         <div class="container">
           <div class="row">
-            <div class="col-sm-12 text-center" style="top:13px;color:#fff;">Â© ABCTreinamentos - Curso de Java 8 para Web</div>
+            <div class="col-sm-12 text-center" style="top:13px;color:#fff;">© ABCTreinamentos - Curso de Java 8 para Web</div>
           </div>
         </div>
       </div>

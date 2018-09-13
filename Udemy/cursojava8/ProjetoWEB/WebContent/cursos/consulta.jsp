@@ -1,3 +1,4 @@
+<jsp:include page="../util/topo.jsp" />
 <html><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +21,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h3 class="tt_menu">&gt;&gt; CLIENTES - ALTERAR UM CLIENTE &lt;&lt;</h3>
+            <h3 class="tt_menu">&gt;&gt; CURSOS - CONSULTAR UM CURSO &lt;&lt;</h3>
           </div>
         </div>
         <div class="row">
@@ -28,36 +29,29 @@
             <form class="form-horizontal" role="form" action="http://localhost/ProjetoWEB/Controlador" method="post">
               <div class="form-group">
                 <div class="col-sm-2">
-                  <label for="inputEmail3" class="control-label">Informar o CPF:</label>
+                  <label for="inputEmail3" class="control-label">Informar o CURSO:</label>
                 </div>
                 <div class="col-sm-10">
-                  <input type="text" name="cpf" class="form-control" id="inputEmail3" placeholder="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" required>
+                  <input type="number" name="cdcurso" class="form-control" id="inputEmail3" placeholder="CURSO" required>
                 </div>
               </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputNome" class="control-label">Informar o NOME:</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="text" name="nome" class="form-control" id="inputNome" placeholder="Nome" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-sm-2">
-                  <label for="inputEMAIL" class="control-label">Informar o EMAIL:</label>
-                </div>
-                <div class="col-sm-10">
-                  <input type="email" name="email" class="form-control" id="inputEMAIL" placeholder="E-mail" required>
-                </div>
-              </div>
-              <input type="hidden" name="idformulario" value="1" />
-              <input type="hidden" name="tipoformulario" value="14" />
-              <button type="submit" class="btn btn-danger">Alterar</button>
+              <input type="hidden" name="idformulario" value="2" />
+              <input type="hidden" name="tipoformulario" value="22" />
+              <button type="submit" class="btn btn-danger">Consultar</button>
             </form>
           </div>
         </div>
       </div>
     </div>
+    <footer>
+      <div class="navbar navbar-fixed-bottom bgred">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12 text-center" style="top:13px;color:#fff;">© ABCTreinamentos - Curso de Java 8 para Web</div>
+          </div>
+        </div>
+      </div>
+    </footer>
     <div class="section">
       <div class="container">
         <div class="row">
@@ -67,15 +61,6 @@
         </div>
       </div>
     </div>
-    <footer>
-      <div class="navbar navbar-fixed-bottom bgred">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12 text-center" style="top:13px;color:#fff;">Â© ABCTreinamentos - Curso de Java 8 para Web</div>
-          </div>
-        </div>
-      </div>
-    </footer>
   
 
 </body></html>
